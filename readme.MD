@@ -5,11 +5,13 @@
 ## instalattion;
 
 ```bash
-   git clone repository
+  git clone repository
   yarn - to install dependencies
   expo start;
 
-  NOTE: Ao startar o projeto, você poderá optar por lê o QRCODE no proprio celular e navegar pela aplicação, ou você pode usar o navegador para start via emulador, android ou ios, conforme desejado.
+  NOTE: Ao startar o projeto, você poderá optar por lê o QRCODE no proprio
+  celular e navegar pela aplicação, ou você pode usar o navegador para start
+  via emulador, android ou ios, conforme desejado.
 
 ```
 
