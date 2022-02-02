@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "poke-zappts",
+    "slug": "poke-zappts",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "poke-zappts"
+}
