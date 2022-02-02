@@ -6,4 +6,7 @@ export const Container = styled.View`
   justify-content: center;
   background-color: ${({ theme }) => theme.colors.black};
 `;
-export const Title = styled.Text``;
+export const Title = styled.Text`
+  font-size: 64px;
+  font-family: ${({ theme }) => theme.fonts.regular};
+`;

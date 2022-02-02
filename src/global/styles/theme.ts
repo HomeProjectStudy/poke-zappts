@@ -10,4 +10,9 @@ export default {
     blue: "#0055D4",
     lilac: "#6C79DB",
   },
+  fonts: {
+    regular: "Poppins_400Regular",
+    medium: "Poppins_500Medium",
+    bold: "Poppins_700Bold",
+  },
 };
