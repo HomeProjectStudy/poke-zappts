@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
-
+import { FlatList, FlatListProps } from "react-native";
+import { DataProps } from "../../interfaces/PokemonDTO";
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
@@ -18,4 +19,11 @@ export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.bold};
 `;
 
-export const Content = styled.View``;
+export const Content = styled.View`
+  flex: 1;
+  margin-horizontal: 15px;
+  margin-top: 40px;
+`;
+export const CardList = styled(
+  FlatList as new (props: FlatListProps<DataProps>) => FlatList<DataProps>
+)``;

@@ -21,8 +21,10 @@
 
 Utilizei o framework React;
 
-- Styled-Compoments:
-- TypeScript:
 - Expo BareWorkflow:
-- React-Navigation:
+- Styled-Compoments: Pré processador moderno de CSS;
+- TypeScript: Tipagem dinânima na aplicação, fácil manutenção e alta escalabilidade;
+- React-Navigation: Lidar com a navegação na aplicação
 - Axios:
+- react-native-gesture-handler: Opções de botões que vão preservar a experiência do usuário na aplicação,
+  no caso, de cada plataforma. (IOS e ANDROID);
