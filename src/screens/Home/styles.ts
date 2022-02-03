@@ -26,4 +26,6 @@ export const Content = styled.View`
 `;
 export const CardList = styled(
   FlatList as new (props: FlatListProps<DataProps>) => FlatList<DataProps>
-)``;
+).attrs({
+  showsVerticalScrollIndicator: false,
+})``;

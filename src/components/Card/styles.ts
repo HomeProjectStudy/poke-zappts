@@ -2,7 +2,7 @@ import { RectButton } from "react-native-gesture-handler";
 import styled from "styled-components/native";
 import { DataProps } from "../../interfaces/PokemonDTO";
 
-export const Container = styled.View<DataProps>`
+export const Container = styled.View`
   flex: 1;
 `;
 export const Wrapper = styled(RectButton)`
@@ -12,6 +12,7 @@ export const Wrapper = styled(RectButton)`
   height: 150px;
   align-items: center;
   border-radius: 10px;
+  margin-bottom: 25px;
 `;
 export const PokeImage = styled.Image`
   width: 120px;
