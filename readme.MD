@@ -21,10 +21,10 @@
 
 Utilizei o framework React;
 
-- Expo BareWorkflow:
+- Expo BareWorkflow: Facilita no desenvolviemento, além de você poder contar com os dois ambientes, IOS e android, o bareWorkflow ainda vem completo e você consegue acessar pastas nativas como android e IOS;
 - Styled-Compoments: Pré processador moderno de CSS;
 - TypeScript: Tipagem dinânima na aplicação, fácil manutenção e alta escalabilidade;
 - React-Navigation: Lidar com a navegação na aplicação
-- Axios:
+- Axios: Grande facilitador para fazer as requisições, tornando mais produtivo o desenvolvimento.
 - react-native-gesture-handler: Opções de botões que vão preservar a experiência do usuário na aplicação,
   no caso, de cada plataforma. (IOS e ANDROID);
