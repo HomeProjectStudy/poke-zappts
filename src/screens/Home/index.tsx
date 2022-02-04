@@ -6,7 +6,7 @@ import { LineBox } from "../../components/LineBox";
 import { Card } from "../../components/Card";
 import { Container, Header, Title, Content, CardList } from "./styles";
 import { api } from "../../services/api";
-import { DataProps } from "../../interfaces/PokemonDTO";
+import { DataProps, PokemonDTO } from "../../interfaces/PokemonDTO";
 import { useNavigation } from "@react-navigation/native";
 
 export function Home() {
@@ -26,8 +26,8 @@ export function Home() {
     fetchPokes();
   }, []);
 
-  function handlerNavigateDetails() {
-    navigate("Details");
+  function handlerNavigateDetails(pokemonData: any) {
+    navigate("Details", { pokemonData });
   }
 
   return (
@@ -45,9 +45,14 @@ export function Home() {
       <Content>
         <CardList
           data={pokemon}
-          keyExtractor={(item) => item}
+          keyExtractor={(item) => item.name}
           renderItem={({ item }) => (
-            <Card data={item} onPress={handlerNavigateDetails} />
+            <Card
+              data={item}
+              onPress={() => {
+                handlerNavigateDetails(item);
+              }}
+            />
           )}
         />
       </Content>

@@ -10,7 +10,6 @@ import {
   Poppins_700Bold,
 } from "@expo-google-fonts/poppins";
 
-import { Home } from "./src/screens/Home";
 import AppRoutes from "./src/routes/app.routes";
 
 export default function App() {

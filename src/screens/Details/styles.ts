@@ -6,7 +6,7 @@ export const Container = styled.View`
   padding-top: 60px;
 `;
 export const Header = styled.View`
-  width: 60%;
+  width: 100%;
   background-color: ${({ theme }) => theme.colors.background};
   justify-content: space-between;
   flex-direction: row;
@@ -28,7 +28,7 @@ export const ContentBoxPokemon = styled.View`
 
   align-items: center;
 
-  margin-bottom: 20;
+  margin-bottom: 20px;
 `;
 
 export const PokeImage = styled.Image`
@@ -36,6 +36,6 @@ export const PokeImage = styled.Image`
   height: 200px;
 `;
 export const PokeName = styled.Text`
-  font-size: 24px;
+  font-size: 18px;
   font-family: ${({ theme }) => theme.fonts.bold};
 `;

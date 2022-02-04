@@ -1,7 +1,9 @@
-import React from "react";
-import { View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { TouchableOpacity } from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 import { LineBox } from "../../components/LineBox";
 import {
@@ -13,12 +15,47 @@ import {
   PokeImage,
   PokeName,
 } from "./styles";
+import { api } from "../../services/api";
+import { DataProps } from "../../interfaces/PokemonDTO";
 
 export function Details() {
+  const route = useRoute();
+  const { pokemonData } = route.params;
+  const pokemonIndex = pokemonData.url.split("/")[6];
+  const [types, setTypes] = useState("");
+  const [weight, setWeight] = useState("");
+  const [heigth, setHeigth] = useState("");
+  const { goBack } = useNavigation();
   const theme = useTheme();
+
+  function handlerGoBack() {
+    goBack();
+  }
+
+  useEffect(() => {
+    async function loadTypes() {
+      const { data } = await api.get(`/type/${pokemonIndex}`);
+      setTypes(data);
+    }
+    loadTypes();
+  }, []);
+  useEffect(() => {
+    async function loadWeight() {
+      const { data } = await api.get(`/pokemon/${pokemonIndex}`);
+      console.log("####################");
+      console.log("setheight", data.height);
+      // console.log("setWeight", data.weight);
+      setWeight(data.weight);
+      setHeigth(data.height);
+    }
+    loadWeight();
+  }, []);
   return (
     <Container>
       <Header>
+        <TouchableOpacity onPress={handlerGoBack}>
+          <Feather name="arrow-left" size={24} color={theme.colors.black} />
+        </TouchableOpacity>
         <Title>Poke - Zappts</Title>
         <MaterialCommunityIcons
           name="pokeball"
@@ -31,12 +68,15 @@ export function Details() {
         <ContentBoxPokemon>
           <PokeImage
             source={{
-              uri: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
+              uri: `http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`,
             }}
             resizeMode="contain"
           />
         </ContentBoxPokemon>
-        <PokeName>Bulbasaur</PokeName>
+        <PokeName>Name: {pokemonData.name}</PokeName>
+        <PokeName>Tipo: {types.name}</PokeName>
+        <PokeName>Peso: {weight} kg</PokeName>
+        <PokeName>Altura: {heigth}m</PokeName>
       </Content>
     </Container>
   );
