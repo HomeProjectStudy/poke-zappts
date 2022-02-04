@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import { FlatList, FlatListProps } from "react-native";
 import { DataProps } from "../../interfaces/PokemonDTO";
+
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};

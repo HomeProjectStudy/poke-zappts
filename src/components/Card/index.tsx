@@ -5,12 +5,12 @@ import { DataProps } from "../../interfaces/PokemonDTO";
 
 import { Container, Wrapper, PokeImage, FooterTitle, Title } from "./styles";
 
-export function Card({ data, ...rest }: DataProps) {
+export function Card({ data, onPress, ...rest }: DataProps) {
   const pokemonIndex = data.url.split("/")[6];
 
   return (
     <Container {...rest}>
-      <Wrapper>
+      <Wrapper onPress={onPress}>
         <PokeImage
           source={{
             uri: `http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`,

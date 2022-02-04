@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "styled-components";
-import { View, Text } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import { LineBox } from "../../components/LineBox";
@@ -8,9 +7,11 @@ import { Card } from "../../components/Card";
 import { Container, Header, Title, Content, CardList } from "./styles";
 import { api } from "../../services/api";
 import { DataProps } from "../../interfaces/PokemonDTO";
+import { useNavigation } from "@react-navigation/native";
 
 export function Home() {
   const theme = useTheme();
+  const { navigate } = useNavigation();
   const [pokemon, setPokemon] = useState<DataProps[]>([]);
 
   useEffect(() => {
@@ -25,6 +26,10 @@ export function Home() {
     fetchPokes();
   }, []);
 
+  function handlerNavigateDetails() {
+    navigate("Details");
+  }
+
   return (
     <Container>
       <Header>
@@ -36,14 +41,14 @@ export function Home() {
         />
       </Header>
       <LineBox />
-      {/* <View style={{ marginTop: 50 }}>
-        <Text>{pokemon}</Text>
-      </View> */}
+
       <Content>
         <CardList
           data={pokemon}
-          keyExtractor={(item) => item.name}
-          renderItem={({ item }) => <Card data={item} />}
+          keyExtractor={(item) => item}
+          renderItem={({ item }) => (
+            <Card data={item} onPress={handlerNavigateDetails} />
+          )}
         />
       </Content>
     </Container>

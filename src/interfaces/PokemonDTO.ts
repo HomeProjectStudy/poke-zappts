@@ -6,4 +6,5 @@ export interface PokemonDTO {
 
 export interface DataProps {
   data: PokemonDTO;
+  onPress: () => void;
 }
